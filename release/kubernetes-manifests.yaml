@@ -326,12 +326,12 @@ metadata:
   name: frontend-external
 spec:
   type: LoadBalancer
+  ports:
+   -  port: 80
+      targetPort: 8080
+      nodePort: 30050
   selector:
     app: frontend
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
